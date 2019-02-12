@@ -11,11 +11,8 @@ public class MainPresenter implements MainContract.IPresenter {
     private MainContract.IModel mModel;
     private MainContract.IView mView;
 
-    //Сообщение
-    private String message;
 
-
-    public MainPresenter(MainContract.IView mView) {
+    MainPresenter(MainContract.IView mView) {
         this.mView = mView;
         this.mModel = new MainModel();
 
@@ -23,8 +20,9 @@ public class MainPresenter implements MainContract.IPresenter {
     }
 
     @Override
-    public void onButtonWasClicked(String data) {
-        message = mModel.setChangeData(data);
+    public void onButtonWasClicked() {
+        //Сообщение
+        String message = mModel.setChangeData(mView.changeText());
         mView.showText(message);
         Log.d(TAG, "onButtonWasClicked()");
     }

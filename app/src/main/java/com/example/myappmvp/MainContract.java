@@ -1,13 +1,14 @@
 package com.example.myappmvp;
 
-public class MainContract {
+class MainContract {
 
     interface IView {
         void showText(String message);
+        String changeText();
     }
 
     interface IPresenter {
-        void onButtonWasClicked(String data);
+        void onButtonWasClicked();
         void onDestroy();
     }
 

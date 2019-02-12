@@ -32,14 +32,14 @@ public class MainActivity extends AppCompatActivity implements MainContract.IVie
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mIPresenter.onButtonWasClicked("Раз");
+                mIPresenter.onButtonWasClicked();
             }
         });
 
         mButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mIPresenter.onButtonWasClicked("Два");
+                mIPresenter.onButtonWasClicked();
             }
         });
 
@@ -51,6 +51,12 @@ public class MainActivity extends AppCompatActivity implements MainContract.IVie
         myTv.setText(message);
         Log.d(TAG, "showMessage()");
     }
+
+    @Override
+    public String changeText() {
+        return "Тата";
+    }
+
 
     //Вызываем у Presenter метод onDestroy, чтобы избежать утечек контекста и прочих неприятностей.
     @Override
