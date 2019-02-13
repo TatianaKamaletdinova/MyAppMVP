@@ -4,7 +4,7 @@ import android.util.Log;
 
 import static android.content.ContentValues.TAG;
 
-public class MainPresenter implements MainContract.IPresenter {
+public class MainPresenter implements MainContract.IPresenter, Observer {
 
 
     //Компоненты MVP приложения
@@ -35,5 +35,10 @@ public class MainPresenter implements MainContract.IPresenter {
  */
 
         Log.d(TAG, "onDestroy()");
+    }
+
+    @Override
+    public void handleEvent(String data) {
+        mView.showText(data);
     }
 }

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements MainContract.IView, Observer {
+public class MainActivity extends AppCompatActivity implements MainContract.IView {
 
     private static final String TAG = "MainActivity";
 
@@ -66,8 +66,4 @@ public class MainActivity extends AppCompatActivity implements MainContract.IVie
         Log.d(TAG, "onDestroy()");
     }
 
-    @Override
-    public void handleEvent(String data) {
-        myTv.setText(data);
-    }
 }
